@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 class CourseLibrary extends Component {
     constructor(props) {
         super(props);
     }
 
-    renderCourse = (course) => {
+    renderCourse = (course, index) => {
         return (
-        <li className='course'>
+        <li key={ index }className='course'>
             <div className='course__info'>
                 <div className='course__title-container'>
                     <div className='course__title'>{ course.title }</div>
@@ -24,12 +25,15 @@ class CourseLibrary extends Component {
     render() {
         return (
             <ul>
-                { this.renderCourse({ title: 'Up and Running with Redis', description: 'In this course you\'ll learn how to work with the efficient Redis database to manage key value relationships.' }) }
-                { this.renderCourse({ title: 'UX for Developers', description: 'This User Experience(UX) course examines how to develop a system for approaching application development and enhancing the experience for users.' }) }
-
+                { this.props.courses.map(this.renderCourse) }
             </ul>
         );
     }
 }
 
-export default CourseLibrary;
+function mapStateToProps(state) {
+    console.log(JSON.stringify(state.courses));
+    return { courses: state.courses };
+}
+
+export default connect(mapStateToProps)(CourseLibrary);
