@@ -1,9 +1,14 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { fetchCourses } from '../actions/index';
 
 class CourseLibrary extends Component {
     constructor(props) {
         super(props);
+    }
+
+    componentDidMount() {
+        this.props.fetchCourses()
     }
 
     renderCourse = (course, index) => {
@@ -32,8 +37,14 @@ class CourseLibrary extends Component {
 }
 
 function mapStateToProps(state) {
-    console.log(JSON.stringify(state.courses));
     return { courses: state.courses };
 }
 
-export default connect(mapStateToProps)(CourseLibrary);
+function mapDispatchToProps(dispatch) {
+    return {
+        fetchCourses: () => {
+        dispatch(fetchCourses());
+    }};
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(CourseLibrary);
