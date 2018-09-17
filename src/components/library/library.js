@@ -29,7 +29,7 @@ class Library extends Component {
 const mapStateToProps = (state) => {
     return {
         courses: state.courses
-    }
+    };
 }
 
 export default connect(mapStateToProps, actions)(Library);
