@@ -1,0 +1,5 @@
+.schedule {
+    display: grid;
+    grid-template-rows: 50px repeat(auto-fit, 1fr);
+    grid-row-gap: 22px;
+}
