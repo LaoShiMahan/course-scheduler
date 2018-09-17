@@ -14,9 +14,8 @@ class LibraryCourse extends Component {
                     <label className="library-course__title">{ title }</label>
                     <Icon icon="check" className="library-course__icon" />
                 </div>
-                
+                <div className="library-course__line"></div>
                 <Arrow className="library-course__arrow" />
-
                 <Action onClick={ () => toggleEnrolled(id) } className="library-course__action" />
                 <div className="library-course__description">
                     <label>Course Description</label>
