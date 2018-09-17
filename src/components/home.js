@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import Library from './library/library';
 import Schedule from './schedule/schedule';
 
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faCheck, faPlusCircle } from '@fortawesome/free-solid-svg-icons';
+library.add(faCheck, faPlusCircle);
+
 class Home extends Component {
     render() {
         return (
