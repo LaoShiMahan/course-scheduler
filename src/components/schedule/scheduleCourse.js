@@ -1,14 +1,18 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import * as actions from '../../actions';
+import Action from '../action';
 
 class ScheduleCourse extends Component {
     render() {
-        const { title } = this.props;
+        const { id, title, toggleEnrolled } = this.props;
         return (
             <div className="schedule-course">
                 <label>{title}</label>
+                <Action onClick={ () => toggleEnrolled(id) } className="library-course__action" />
             </div>
         );
     }
 }
 
-export default ScheduleCourse;
+export default connect(null, actions)(ScheduleCourse);
