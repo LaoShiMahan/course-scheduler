@@ -5,15 +5,15 @@
     height: 100%;
     width: 100%;
     display: grid;
-    grid-template-rows: 100px repeat(5, 80px) [progress-s] 76px [progress-e];
+    grid-template-rows: [space-one-s] 1fr [space-one-e] repeat(5, 80px) [progress-s] 1fr [progress-e];
     grid-row-gap: 22px;
     justify-items: center;
     align-items: center;
     align-content: center;
 
     &__title {
-        border-left: 1px solid $subtle-gray;
-        padding-left: 30px;
+        border-left: 2px solid $subtle-gray;
+        padding: 6px 0px 6px 30px;
         color: white;
         font-family: $aleg;
         font-size: 20px;

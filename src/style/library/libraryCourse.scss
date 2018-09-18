@@ -9,7 +9,7 @@
 
 .library-course {
     display: grid;
-    grid-template-columns: 25px [content-s] 1fr [content-e arrow-s] 47px [arrow-e action-s] 58px [action-e];
+    grid-template-columns: 25px [content-s] 1fr [content-e arrow-s] 47px [arrow-e action-s] 58px [action-e space-s] 10px [space-e];
     grid-template-rows: 12px [title-s] 32px [title-e description-s] 1fr [description-e] 12px;
     align-items: center;
     z-index: 1;

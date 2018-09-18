@@ -30,15 +30,15 @@ class LibraryCourse extends Component {
     }
 
     render() {
-        const { id, title, description, toggleEnrolled } = this.props;
+        const { id, title, description, enrolled, toggleEnrolled } = this.props;
         return (
             <div id={ `library-course-${id}` } className="library-course">
                 <div className="library-course__title-check">
                     <div className="library-course__title">{ title }</div>
-                    <Icon icon="check" className="library-course__icon" />
+                    {enrolled ? <Icon icon="check" className="library-course__icon" /> : "" }
                 </div>
                 <Arrow id={ id } callBack={ status => this.handleCallback(status, id) } className="library-course__arrow" />
-                <Action id={ id } onClick={ () => toggleEnrolled(id) } className="library-course__action" />
+                <Action id={ id } onClick={ () => toggleEnrolled(id) } className={`library-course__action ${ enrolled ? "action-remove" : "" }`} />
                 <AnimateHeight duration={300} height={this.state.height} className="library-course__description">
                     <label>Course Description</label>
                     <p>{ description }</p>
