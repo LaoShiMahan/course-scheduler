@@ -1,6 +1,6 @@
 .library {
     grid-column: library-s/library-e;
-    grid-row: 1/-1;
+    grid-row: 1/2;
 
     overflow: hidden;
     height: 100%;
@@ -25,17 +25,18 @@
 }
 
 .library-container {
+    
     display: grid;
-    grid-template-rows: [courses-s] repeat(auto-fit, 1fr) [courses-e];
+    grid-template-rows: [courses-s] repeat(auto-fit, 1fr) [courses-e] 76px;
     grid-template-columns: 1fr;
     grid-row-gap: 22px;
 
-    padding: 7% 0% 5% 5%;
+    padding: 7% 0% 5% 0%;
     overflow-y: scroll;
 
     height: 100%;
-    width: 95%;
+    width: 100%;
 
     position: absolute;
-    right: -10px;
+    right: -15px;
 }

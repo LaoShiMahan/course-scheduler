@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Icon } from './icon';
 
 class Action extends Component {
     constructor() {
@@ -26,10 +25,7 @@ class Action extends Component {
         const { id, onClick, className } = this.props;
         console.log(this.props);
         return (
-            <a id={ `action-${id}` } onClick={ () => this.handleAction(id, onClick) } className={ `${ className } action` }>
-                {/* <Icon icon="plus-circle" className={ className } /> */}
-                {/* <Icon icon="times-circle" className={ className } /> */}
-            </a>
+            <a id={ `action-${id}` } onClick={ () => this.handleAction(id, onClick) } className={ `${ className } action` }></a>
         );
     }
 }

@@ -3,8 +3,8 @@ import Library from './library/library';
 import Schedule from './schedule/schedule';
 
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faCheck, faPlusCircle, faTimesCircle } from '@fortawesome/free-solid-svg-icons';
-library.add(faCheck, faPlusCircle, faTimesCircle);
+import { faCheck } from '@fortawesome/free-solid-svg-icons';
+library.add(faCheck);
 
 class Home extends Component {
     render() {

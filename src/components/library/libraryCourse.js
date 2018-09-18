@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../../actions';
-import AnimateHeight from 'react-animate-height';
 import { Icon } from '../icon';
 import Arrow from '../arrow';
 import Action from '../action';
@@ -39,10 +38,11 @@ class LibraryCourse extends Component {
                 </div>
                 <Arrow id={ id } callBack={ status => this.handleCallback(status, id) } className="library-course__arrow" />
                 <Action id={ id } onClick={ () => toggleEnrolled(id) } className={`library-course__action ${ enrolled ? "action-remove" : "" }`} />
-                <AnimateHeight duration={300} height={this.state.height} className="library-course__description">
-                    <label>Course Description</label>
+
+                <div className="library-course__description">
+                    <div>Course Description</div>
                     <p>{ description }</p>
-                </AnimateHeight>
+                </div>
             </div>
         );
     }
