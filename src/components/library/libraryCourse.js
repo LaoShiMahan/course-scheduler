@@ -15,19 +15,8 @@ class LibraryCourse extends Component {
         }
     }
 
-    renderDescription = (description) => {
-        if(this.state.descriptionStatus) {
-            return (
-                <div className="library-course__description">
-                    <label>Course Description</label>
-                    <p>{ description }</p>
-                </div>
-            )
-        }
-    }
-
     handleCallback = (status, id) => {
-        let height = this.state.height === 0 ? 80 : 0;
+        let height = this.state.height === 0 ? "auto" : 0;
 
         status ? 
             document.getElementById(`library-course-${id}`).classList.remove('library-course-selected')
@@ -45,10 +34,9 @@ class LibraryCourse extends Component {
         return (
             <div id={ `library-course-${id}` } className="library-course">
                 <div className="library-course__title-check">
-                    <label className="library-course__title">{ title }</label>
+                    <div className="library-course__title">{ title }</div>
                     <Icon icon="check" className="library-course__icon" />
                 </div>
-                <div className="library-course__line"></div>
                 <Arrow id={ id } callBack={ status => this.handleCallback(status, id) } className="library-course__arrow" />
                 <Action id={ id } onClick={ () => toggleEnrolled(id) } className="library-course__action" />
                 <AnimateHeight duration={300} height={this.state.height} className="library-course__description">

@@ -10,8 +10,9 @@
 .library-course {
     display: grid;
     grid-template-columns: 25px [content-s] 1fr [content-e arrow-s] 47px [arrow-e action-s] 58px [action-e];
-    grid-template-rows: 12px [title-s] 32px [title-e line-s] 44px [line-e description-s] 1fr [description-e] 12px;
+    grid-template-rows: 12px [title-s] 32px [title-e description-s] 1fr [description-e] 12px;
     align-items: center;
+    z-index: 1;
 
     &__title-check {
         display: flex;
@@ -26,15 +27,6 @@
         line-height: 22px;
     }
 
-    &__line {
-        grid-column: content-s/action-e;
-        grid-row: line-s/line-e;
-        border-bottom: 1px solid #F2F2F2;
-        margin-top: 19px;
-        margin-bottom: 24px;
-        padding-top: 19px;
-    }
-
     &__icon {
         color: $blue;
         padding-left: 16px;
@@ -44,19 +36,25 @@
     &__arrow {
         grid-column: arrow-s/arrow-e;
         grid-row: title-s/title-e;
+        cursor: pointer;
     }
 
     &__action {
+        opacity: 0;
+        transition: all 0.3s ease;
         grid-column: action-s/action-e;
         grid-row: title-s/title-e;
         justify-self: center;
+        cursor: pointer;
     }
 
     &__description {
-        grid-column: content-s/action-e;
+        grid-column: content-s/arrow-e;
         grid-row: description-s/description-e;
-        // padding-top: 24px;
+        margin-top: 19px;
+        padding-top: 24px;
         padding-bottom: 12px;
+        border-top: 1px solid #F2F2F2;
 
         label {
             color: $blue;
@@ -75,5 +73,9 @@
 
     &:hover {
         @include solid-course;
+
+        .library-course__action {
+            opacity: 1;
+        }
     }
 }

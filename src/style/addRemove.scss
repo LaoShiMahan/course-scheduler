@@ -1,5 +1,5 @@
 .action {
-    background-color: black;
+    background-color: $subtle-black;
     font-size: 32px;
     height: 32px;
     width: 32px;
@@ -33,6 +33,8 @@
 }
 
 .action-remove {
+cursor: pointer;
+
     &:after {
         transform: translate(-50%, -50%) rotate(-135deg);
     }

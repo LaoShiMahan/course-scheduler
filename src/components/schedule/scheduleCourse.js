@@ -8,8 +8,8 @@ class ScheduleCourse extends Component {
         const { id, title, toggleEnrolled } = this.props;
         return (
             <div className="schedule-course">
-                <label>{title}</label>
-                <Action onClick={ () => toggleEnrolled(id) } className="library-course__action" />
+                <div className="schedule-course__title">{title}</div>
+                <Action onClick={ () => toggleEnrolled(id) } className="schedule-course__action action-remove" />
             </div>
         );
     }
