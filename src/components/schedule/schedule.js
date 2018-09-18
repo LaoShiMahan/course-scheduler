@@ -11,9 +11,10 @@ class Schedule extends Component {
 
         return data.map((course, index) => {
             if(course.enrolled && this.amountEnrolled !== 5) {
+                console.log(course, index)
                 this.amountEnrolled++;
                 return <ScheduleCourse { ...course } key={ index }/>
-            } else if ((index) < 5) {
+            } else if (index < 5) {
                 return <ScheduleSlots id={ index + 1 } key={ index }/>
             }
         })

@@ -10,9 +10,11 @@
     .library-course {
         
         &__description {
-            height: auto;
-            opacity: 1;
-            margin-top: 12px;
+            // height: auto;
+            // opacity: 1;
+            // margin-top: 12px;
+
+            border-top: 1px solid #F2F2F2;
             padding-top: 12px;
             padding-bottom: 12px;
         }
@@ -21,6 +23,8 @@
 
 .library-course {
     display: grid;
+    // grid-template-columns: 25px [content-s] 1fr [content-e arrow-s] 47px [arrow-e action-s] 58px [action-e space-s] 10px [space-e];
+    // grid-template-rows: 12px [title-s] 32px [title-e description-s] 1fr [description-e] 12px;
     grid-template-columns: 25px [content-s] 1fr [content-e arrow-s] 47px [arrow-e action-s] 58px [action-e space-s] 10px [space-e];
     grid-template-rows: 12px [title-s] 32px [title-e description-s] 1fr [description-e] 12px;
     align-items: center;
@@ -37,6 +41,7 @@
         font-family: $lato;
         font-size: 18px;
         line-height: 22px;
+        margin-bottom: 12px;
     }
 
     &__icon {
@@ -61,13 +66,17 @@
     }
 
     &__description {
-        height: 0;
-        opacity: 0;
+        // height: 0;
+        // opacity: 0;
         transition: all .3s ease;
-        grid-column: content-s/arrow-e;
+
+        padding-top: 0px;
+        padding-bottom: 0px;
+
+        grid-column: content-s/arrow-s;
         grid-row: description-s/description-e;
 
-        border-top: 1px solid #F2F2F2;
+        border-top: 1px solid transparent;
 
         div {
             color: $blue;
