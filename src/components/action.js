@@ -9,24 +9,24 @@ class Action extends Component {
         }
     }
 
-    handleAction = (onClick) => {
+    handleAction = (id, onClick) => {
         onClick();
-        if(this.state.status) {
-            document.getElementById("action").classList.remove("action-remove");
-        } else {
-            document.getElementById("action").classList.add("action-remove");
-        }
+
+        this.state.status ?
+            document.getElementById(`action-${id}`).classList.remove("action-remove")
+            :
+            document.getElementById(`action-${id}`).classList.add("action-remove")
+
         this.setState((prevState) => {
-            return ({
-                status: !prevState.status
-            })
-        })
+            return ({ status: !prevState.status })
+        });
     }
 
     render() {
-        const { onClick, className } = this.props;
+        const { id, onClick, className } = this.props;
+        console.log(this.props);
         return (
-            <a id="action" onClick={ () => this.handleAction(onClick) } className={ `${ className } action` }>
+            <a id={ `action-${id}` } onClick={ () => this.handleAction(id, onClick) } className={ `${ className } action` }>
                 {/* <Icon icon="plus-circle" className={ className } /> */}
                 {/* <Icon icon="times-circle" className={ className } /> */}
             </a>

@@ -4,16 +4,16 @@ class Arrow extends Component {
     constructor() {
         super()
         this.state = {
-            status: true
+            status: false
         }
     }
 
     toggleArrow = (id) => {
         this.props.callBack(this.state.status);
         if(this.state.status) {
-            document.getElementById(id).classList.add('arrow-closed');
+            document.getElementById(`arrow-${id}`).classList.remove('arrow-closed');
         } else {
-            document.getElementById(id).classList.remove('arrow-closed');
+            document.getElementById(`arrow-${id}`).classList.add('arrow-closed');
         }
         this.setState(prevState => {
             return ({ status: !prevState.status });
@@ -23,7 +23,7 @@ class Arrow extends Component {
     render() {
         const { id, className } = this.props;
         return (
-            <a id={id} onClick={ () => this.toggleArrow(id) } className={ `${ className } arrow` }></a>
+            <a id={ `arrow-${id}` } onClick={ () => this.toggleArrow(id) } className={ `${ className } arrow` }></a>
         );
     }
 }
