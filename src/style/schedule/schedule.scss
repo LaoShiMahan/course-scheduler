@@ -5,7 +5,7 @@
     height: 100%;
     width: 100%;
     display: grid;
-    grid-template-rows: [space-one-s] 1fr [space-one-e] repeat(5, 80px) [progress-s] 1fr [progress-e];
+    grid-template-rows: [space-one-s progress-100] 1fr [space-one-e scheduled-courses-s] repeat(5, 80px) [scheduled-courses-s progress-0] 1fr [progress-e];
     grid-row-gap: 22px;
     justify-items: center;
     align-items: center;

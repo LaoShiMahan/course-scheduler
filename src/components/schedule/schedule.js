@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import Gradient from '../gradient';
 import ScheduleCourse from './scheduleCourse';
 import ProgressTracker from './progressTracker';
+import { ScheduleSlots } from './scheduleSlots';
 
 class Schedule extends Component {
     renderCourses = () => {
@@ -12,6 +13,8 @@ class Schedule extends Component {
             if(course.enrolled && this.amountEnrolled !== 5) {
                 this.amountEnrolled++;
                 return <ScheduleCourse { ...course } key={ index }/>
+            } else if ((index) < 5) {
+                return <ScheduleSlots id={ index + 1 } key={ index }/>
             }
         })
     }
@@ -22,7 +25,7 @@ class Schedule extends Component {
             <div className="schedule">
                 <h1 className="schedule__title">Course Schedule</h1>
                 { this.renderCourses() }
-                <ProgressTracker max={5} enrolled={ this.amountEnrolled }/>
+                <ProgressTracker max={ 5 } enrolled={ this.amountEnrolled }/>
                 <Gradient />
             </div>
         );

@@ -1,17 +1,25 @@
-.schedule-course {
+@mixin course-slots {
     height: 55px;
     width: 280px;
-    background-color: white;
     box-shadow: 0 2px 14px 0 rgba(0, 0, 0, 0.2);
-    color: $subtle-black;
-    font-family: $lato;
-    font-size: 16px;
-    text-align: center;
+    border: 1px solid transparent;
     display: grid;
-    grid-template-columns: [title-s] 1fr [action-s] 32px [action-e space-s] 12px [space-e title-e];
-    grid-template-rows: 1fr;
     justify-items: center;
     align-items: center;
+    font-family: $lato;
+    font-size: 16px;
+}
+
+.schedule-course {
+    @include course-slots;
+    background-color: white;
+    color: $subtle-black;
+    text-align: center;
+    
+    grid-template-columns: [title-s] 1fr [action-s] 32px [action-e space-s] 12px [space-e title-e];
+    grid-template-rows: 1fr;
+    
+    z-index: 1;
 
     &__title {
         grid-column: title-s/title-e;
@@ -21,5 +29,30 @@
     &__action {
         grid-column: action-s/action-e;
         grid-row: 1/-1;
+    }
+}
+
+.schedule-slot {
+    border: 1px dashed white;
+    color: white;
+
+    &__1 {
+        @include course-slots;
+    }
+
+    &__2 {
+        @include course-slots;
+    }
+
+    &__3 {
+        @include course-slots;
+    }
+
+    &__4 {
+        @include course-slots;
+    }
+
+    &__5 {
+        @include course-slots;
     }
 }

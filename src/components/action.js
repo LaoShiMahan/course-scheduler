@@ -23,7 +23,6 @@ class Action extends Component {
 
     render() {
         const { id, onClick, className } = this.props;
-        console.log(this.props);
         return (
             <a id={ `action-${id}` } onClick={ () => this.handleAction(id, onClick) } className={ `${ className } action` }></a>
         );
