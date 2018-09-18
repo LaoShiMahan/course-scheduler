@@ -9,15 +9,14 @@
 
 .library-course {
     display: grid;
-    grid-template-columns: repeat(auto-fit, 1fr);
-    grid-template-rows: 80px 1fr;
-
-    padding: 25px;
+    grid-template-columns: 25px [content-s] 1fr [content-e arrow-s] 47px [arrow-e action-s] 58px [action-e];
+    grid-template-rows: 12px [title-s] 32px [title-e line-s] 44px [line-e description-s] 1fr [description-e] 12px;
+    align-items: center;
 
     &__title-check {
-        grid-row: 1/2;
         display: flex;
-        grid-column: 1/2;
+        grid-column: content-s/content-e;
+        grid-row: title-s/title-e;
     }
 
     &__title {
@@ -28,30 +27,36 @@
     }
 
     &__line {
-        grid-row: 1/2;
-        grid-column: 1/2;
+        grid-column: content-s/action-e;
+        grid-row: line-s/line-e;
         border-bottom: 1px solid #F2F2F2;
         margin-top: 19px;
         margin-bottom: 24px;
+        padding-top: 19px;
     }
 
     &__icon {
         color: $blue;
+        padding-left: 16px;
+        font-size: 24px;
     }
 
     &__arrow {
-        grid-row: 1/2;
-        grid-column: 2/3;
+        grid-column: arrow-s/arrow-e;
+        grid-row: title-s/title-e;
     }
 
     &__action {
-        grid-row: 1/2;
-        grid-column: 3/4;
+        grid-column: action-s/action-e;
+        grid-row: title-s/title-e;
+        justify-self: center;
     }
 
     &__description {
-        grid-row: 2/3;
-        grid-column: 1/-1;
+        grid-column: content-s/action-e;
+        grid-row: description-s/description-e;
+        // padding-top: 24px;
+        padding-bottom: 12px;
 
         label {
             color: $blue;

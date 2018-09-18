@@ -51,11 +51,9 @@ class LibraryCourse extends Component {
                 <div className="library-course__line"></div>
                 <Arrow id={ id } callBack={ status => this.handleCallback(status, id) } className="library-course__arrow" />
                 <Action id={ id } onClick={ () => toggleEnrolled(id) } className="library-course__action" />
-                <AnimateHeight duration={300} height={this.state.height}>
-                    <div className="library-course__description">
-                        <label>Course Description</label>
-                        <p>{ description }</p>
-                    </div>
+                <AnimateHeight duration={300} height={this.state.height} className="library-course__description">
+                    <label>Course Description</label>
+                    <p>{ description }</p>
                 </AnimateHeight>
             </div>
         );
